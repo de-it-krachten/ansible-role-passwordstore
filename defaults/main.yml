@@ -1,0 +1,25 @@
+---
+
+# password-store version
+passwordstore_version: '1.7.4'
+
+# archive url
+passwordstore_url: https://git.zx2c4.com/password-store/snapshot/password-store-{{ passwordstore_version }}.tar.xz
+
+# Installtion method (package or archive)
+passwordstore_source: 'package'
+
+# Package dependencies
+passwordstore_dependencies:
+  - tree
+  - gpg
+
+# Package dependencies for archive installation
+passwordstore_dependencies_archive:
+  - make
+  - tar
+  - xz
+
+# Package
+passwordstore_packages:
+  - pass

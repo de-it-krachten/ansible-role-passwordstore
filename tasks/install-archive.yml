@@ -1,0 +1,31 @@
+---
+
+- name: Install package dependencies for archive installation
+  ansible.builtin.package:
+    name: "{{ passwordstore_dependencies_archive }}"
+    state: present
+
+- name: Install pass (from archive)
+  when:
+    - __pass_version.stdout | length == 0 or __pass_version.stdout is version(passwordstore_version, '<')
+
+  block:
+
+    - name: Retrieve pass
+      ansible.builtin.get_url:
+        url: "{{ passwordstore_url }}"
+        dest: /tmp/password-store-{{ passwordstore_version }}.tar.xz
+        mode: "0644"
+
+    - name: Extract pass
+      ansible.builtin.unarchive:
+        src: /tmp/password-store-{{ passwordstore_version }}.tar.xz
+        dest: /tmp
+        keep_newer: yes
+        remote_src: true
+
+    - name: Install pass  # noqa no-changed-when
+      ansible.builtin.command: make install
+      args:
+        chdir: /tmp/password-store-{{ passwordstore_version }}
+      become: yes

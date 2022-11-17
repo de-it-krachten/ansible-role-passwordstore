@@ -1,0 +1,52 @@
+---
+
+- name: Assertions
+  ansible.builtin.assert:
+    that:
+      - passwordstore_user_name is defined and passwordstore_user_name | length > 0
+      - passwordstore_user_email is defined and passwordstore_user_email | length > 0
+
+- name: Create Passwordstore directory
+  when: passwordstore_home is undefined
+  block:
+
+    - name: Get home-directory for remote user
+      ansible.builtin.shell: >
+        getent passwd {{ passwordstore_user_name }} | cut -d: -f6
+      args:
+        executable: /bin/bash
+      changed_when: false
+      register: user_home
+
+    - name: Fail if none is found
+      ansible.builtin.fail:
+        msg: "Unable to find home-directory for '{{ passwordstore_user_name }}'"
+      when: user_home.stdout | length == 0
+
+    - name: Create password-store directory
+      ansible.builtin.file:
+        path: "{{ user_home.stdout }}/.password-store"
+        state: directory
+        owner: "{{ passwordstore_user_name }}"
+        group: "{{ passwordstore_user_name }}"
+        mode: "0700"
+
+    - name: Define passwordstore_home
+      ansible.builtin.set_fact:
+        passwordstore_home: "{{ user_home.stdout }}/.password-store"
+
+- name: Initialize passwordstore
+  environment:
+    PASSWORDSTORE_DIR: "{{ passwordstore_home }}"
+  become: yes
+  become_user: "{{ passwordstore_user_name }}"
+  block:
+
+    - name: Check if pass is initiated
+      ansible.builtin.stat:
+        path: "{{ passwordstore_home }}/.gpg-id"
+      register: _pass
+
+    - name: Initiate pass
+      ansible.builtin.command: pass init {{ passwordstore_user_email }}
+      when: not _pass.stat.exists

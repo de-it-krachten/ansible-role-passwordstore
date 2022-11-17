@@ -1,0 +1,6 @@
+---
+
+- name: Install pass (from package)
+  ansible.builtin.package:
+    name: "{{ passwordstore_packages }}"
+    state: present

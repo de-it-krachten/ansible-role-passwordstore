@@ -1,0 +1,25 @@
+---
+
+- name: Converge
+  hosts: all
+  become: "yes"
+  vars:
+    gpg_user_name: root
+    gpg_user_realname: root
+    gpg_user_comment: test key
+    gpg_user_email: root@localhost
+    gpg_user_passphrase: Abcd1234
+    passwordstore_user_name: root
+    passwordstore_user_email: root@localhost
+  pre_tasks:
+    - name: Create 'remote_tmp'
+      ansible.builtin.file:
+        path: /root/.ansible/tmp
+        state: directory
+        mode: "0700"
+  roles:
+    - gpg
+  tasks:
+    - name: Include role 'ansible-role-passwordstore'
+      ansible.builtin.include_role:
+        name: ansible-role-passwordstore
