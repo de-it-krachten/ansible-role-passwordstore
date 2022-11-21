@@ -11,12 +11,6 @@
     gpg_user_passphrase: Abcd1234
     passwordstore_user_name: root
     passwordstore_user_email: root@localhost
-  pre_tasks:
-    - name: Create 'remote_tmp'
-      ansible.builtin.file:
-        path: /root/.ansible/tmp
-        state: directory
-        mode: "0700"
   roles:
     - gpg
   tasks:

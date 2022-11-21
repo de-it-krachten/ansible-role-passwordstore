@@ -44,7 +44,10 @@ Note:
 ### defaults/main.yml
 <pre><code>
 # password-store version
-password_store_version: '1.7.4'
+passwordstore_version: '1.7.4'
+
+# archive url
+passwordstore_url: https://git.zx2c4.com/password-store/snapshot/password-store-{{ passwordstore_version }}.tar.xz
 
 # Installtion method (package or archive)
 passwordstore_source: 'package'
@@ -54,21 +57,36 @@ passwordstore_dependencies:
   - tree
   - gpg
 
+# Package dependencies for archive installation
+passwordstore_dependencies_archive:
+  - make
+  - tar
+  - xz
+
 # Package
 passwordstore_packages:
   - pass
 </pre></code>
 
-### defaults/family-RedHat-8.yml
+### defaults/Fedora.yml
 <pre><code>
-# Installtion method (package or archive)
+# Installation method (package or archive)
+passwordstore_source: 'package'
+</pre></code>
+
+### defaults/family-RedHat.yml
+<pre><code>
+# Installation method (package or archive)
 passwordstore_source: 'archive'
 </pre></code>
 
-### defaults/family-RedHat-7.yml
+### defaults/family-Debian.yml
 <pre><code>
-# Installtion method (package or archive)
-passwordstore_source: 'archive'
+# Package dependencies for archive installation
+passwordstore_dependencies_archive:
+  - make
+  - tar
+  - xz-utils
 </pre></code>
 
 
@@ -88,12 +106,6 @@ passwordstore_source: 'archive'
     gpg_user_passphrase: Abcd1234
     passwordstore_user_name: root
     passwordstore_user_email: root@localhost
-  pre_tasks:
-    - name: Create 'remote_tmp'
-      ansible.builtin.file:
-        path: /root/.ansible/tmp
-        state: directory
-        mode: "0700"
   roles:
     - gpg
   tasks:

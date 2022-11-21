@@ -39,5 +39,5 @@ roles:
     scm: git
   - name: gpg
     src: https://github.com/de-it-krachten/ansible-role-gpg.git
-    version: dev
+    version: main
     scm: git

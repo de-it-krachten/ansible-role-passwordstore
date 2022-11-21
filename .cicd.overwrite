@@ -11,8 +11,7 @@ generic:
 molecule:
   requirements:
     roles_extra:
-      # - gpg
-      - { name: gpg, version: dev }
+      - gpg
   prepare:
     vars:
       activate_epel: true
