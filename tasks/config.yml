@@ -1,0 +1,28 @@
+---
+
+- name: Assertions
+  ansible.builtin.assert:
+    that:
+      - passwordstore_user_name is defined and passwordstore_user_name | length > 0
+      - passwordstore_user_email is defined and passwordstore_user_email | length > 0
+
+- name: Create Passwordstore directory
+  ansible.builtin.include_tasks:
+    file: home.yml
+  when: passwordstore_home is undefined
+
+- name: Initialize passwordstore
+  environment:
+    PASSWORD_STORE_DIR: "{{ passwordstore_home }}"
+  become: yes
+  become_user: "{{ passwordstore_user_name }}"
+  block:
+
+    - name: Check if pass is initiated
+      ansible.builtin.stat:
+        path: "{{ passwordstore_home }}/.gpg-id"
+      register: _pass
+
+    - name: Initiate pass
+      ansible.builtin.command: pass init {{ passwordstore_user_email }}
+      when: not _pass.stat.exists

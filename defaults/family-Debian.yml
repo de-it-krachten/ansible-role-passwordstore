@@ -1,0 +1,7 @@
+---
+
+# Package dependencies for archive installation
+passwordstore_dependencies_archive:
+  - make
+  - tar
+  - xz-utils

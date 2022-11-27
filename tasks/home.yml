@@ -1,0 +1,18 @@
+---
+
+- name: Fail if none is found
+  ansible.builtin.fail:
+    msg: "Unable to find home-directory for '{{ passwordstore_user_name }}'"
+  when: ansible_local['users_ext'][passwordstore_user_name]['home'] is undefined
+
+- name: Create password-store directory
+  ansible.builtin.file:
+    path: "{{ ansible_local['users_ext'][passwordstore_user_name]['home'] }}/.password-store"
+    state: directory
+    owner: "{{ passwordstore_user_name }}"
+    group: "{{ passwordstore_user_name }}"
+    mode: "0700"
+
+- name: Define passwordstore_home
+  ansible.builtin.set_fact:
+    passwordstore_home: "{{ ansible_local['users_ext'][passwordstore_user_name]['home'] }}/.password-store"

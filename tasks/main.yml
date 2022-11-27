@@ -1,0 +1,10 @@
+---
+
+- name: Load variables based on OS type
+  ansible.builtin.include_tasks: vars.yml
+
+- name: Install passwordstore
+  ansible.builtin.include_tasks: install.yml
+
+- name: Create/import GPG keys
+  ansible.builtin.include_tasks: config.yml
