@@ -1,7 +1,7 @@
 ---
 
 - name: Get user home directory
-  set_fact:
+  ansible.builtin.set_fact:
     passwordstore_user_home: "{{ passwordstore_user_home | expanduser }}"
 
 - name: Fail if none is found
