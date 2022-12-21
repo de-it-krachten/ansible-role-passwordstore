@@ -6,8 +6,13 @@ passwordstore_version: '1.7.4'
 # archive url
 passwordstore_url: https://git.zx2c4.com/password-store/snapshot/password-store-{{ passwordstore_version }}.tar.xz
 
-# Installtion method (package or archive)
+# Installation method (package or archive)
 passwordstore_source: 'package'
+
+# Define default user + group
+passwordstore_user_name: root
+passwordstore_group_name: root
+passwordstore_user_home: "~{{ passwordstore_user_name }}"
 
 # Package dependencies
 passwordstore_dependencies:
