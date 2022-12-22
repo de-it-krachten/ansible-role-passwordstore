@@ -4,6 +4,7 @@
   ansible.builtin.package:
     name: "{{ passwordstore_dependencies }}"
     state: present
+  become: yes
 
 - name: Get installed version
   ansible.builtin.shell: |
