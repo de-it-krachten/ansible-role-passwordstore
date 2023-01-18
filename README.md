@@ -52,10 +52,10 @@ passwordstore_url: https://git.zx2c4.com/password-store/snapshot/password-store-
 # Installation method (package or archive)
 passwordstore_source: 'package'
 
-# Define default user + group
+# Define default user + group (defaults to user on control node)
 passwordstore_user_name: "{{ lookup('pipe', 'id -un') }}"
 passwordstore_group_name: "{{ lookup('pipe', 'id -gn') }}"
-passwordstore_user_home: "~{{ passwordstore_user_name }}"
+passwordstore_user_home: "{{ ('~' + passwordstore_user_name) | expanduser }}"
 
 # Package dependencies
 passwordstore_dependencies:
