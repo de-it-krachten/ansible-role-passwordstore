@@ -110,6 +110,7 @@ passwordstore_dependencies_archive:
     gpg_user_email: root@localhost
     gpg_user_passphrase: Abcd1234
     passwordstore_user_name: root
+    passwordstore_group_name: root
     passwordstore_user_email: root@localhost
   roles:
     - gpg
