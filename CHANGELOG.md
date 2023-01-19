@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.0.1...v1.1.0) (2023-01-19)
+
+
+### Features
+
+* Update CI/README/Platforms ([f0c5c6b](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/f0c5c6b257ea52f45aea9cdee8d9e05ff73c8a61))
+
 ## [1.0.1](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.0.0...v1.0.1) (2022-12-21)
 
 
