@@ -1,22 +1,28 @@
 ---
 
-- name: Get user home directory
-  ansible.builtin.set_fact:
-    passwordstore_user_home: "{{ passwordstore_user_home | expanduser }}"
+- name: Create password directory
+  when: passwordstore_home is undefined
+  block:
 
-- name: Fail if none is found
-  ansible.builtin.fail:
-    msg: "Unable to find home-directory for '{{ passwordstore_user_name }}'"
-  when: passwordstore_user_home | length == 0
+    - name: Use PASSWORD_STORE_DIR
+      ansible.builtin.set_fact:
+        passwordstore_home: "{{ lookup('env', 'PASSWORD_STORE_DIR') }}"
+      when: lookup('env', 'PASSWORD_STORE_DIR') | length > 0
 
-- name: Create password-store directory
+    - name: Get home-directory for {{ passwordstore_user_name }}
+      ansible.builtin.set_fact:
+        passwordstore_home: "{{ ('~' + passwordstore_user_name) | expanduser }}/.password-store"
+
+    - name: Fail if none is found
+      ansible.builtin.fail:
+        msg: "Unable to find home-directory for '{{ passwordstore_user_name }}'"
+      when: passwordstore_home is search('^~')
+
+- name: Create GPG directory
   ansible.builtin.file:
-    path: "{{ passwordstore_user_home }}/.password-store"
+    path: "{{ passwordstore_home }}"
     state: directory
-    owner: "{{ passwordstore_user_name }}"
-    group: "{{ passwordstore_group_name }}"
+    owner: "{{ passwordstore_user_name | default(omit) }}"
+    group: "{{ passwordstore_group_name | default(omit) }}"
     mode: "0700"
-
-- name: Define passwordstore_home
-  ansible.builtin.set_fact:
-    passwordstore_home: "{{ passwordstore_user_home }}/.password-store"
+  become: yes

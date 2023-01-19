@@ -9,7 +9,6 @@
 - name: Create Passwordstore directory
   ansible.builtin.include_tasks:
     file: home.yml
-  when: passwordstore_home is undefined
 
 - name: Initialize passwordstore
   environment:

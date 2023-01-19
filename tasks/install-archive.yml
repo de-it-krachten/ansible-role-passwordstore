@@ -4,6 +4,7 @@
   ansible.builtin.package:
     name: "{{ passwordstore_dependencies_archive }}"
     state: present
+  become: yes
 
 - name: Install pass (from archive)
   when:

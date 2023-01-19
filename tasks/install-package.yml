@@ -4,3 +4,4 @@
   ansible.builtin.package:
     name: "{{ passwordstore_packages }}"
     state: present
+  become: yes
