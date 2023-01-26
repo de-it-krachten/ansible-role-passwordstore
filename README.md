@@ -113,7 +113,7 @@ passwordstore_dependencies_archive:
     passwordstore_group_name: root
     passwordstore_user_email: root@localhost
   roles:
-    - gpg
+    - deitkrachten.gpg
   tasks:
     - name: Include role 'passwordstore'
       ansible.builtin.include_role:

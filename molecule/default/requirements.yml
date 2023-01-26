@@ -41,7 +41,7 @@ roles:
     src: https://github.com/de-it-krachten/ansible-role-unbound.git
     version: main
     scm: git
-  - name: gpg
+  - name: deitkrachten.gpg
     src: https://github.com/de-it-krachten/ansible-role-gpg.git
     version: main
     scm: git

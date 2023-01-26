@@ -11,13 +11,13 @@ generic:
 molecule:
   requirements:
     roles_extra:
-      - gpg
+      - deitkrachten.gpg
   prepare:
     vars:
       activate_epel: true
   converge:
     roles:
-      - gpg
+      - deitkrachten.gpg
     vars:
       gpg_user_name: root
       gpg_user_realname: root
