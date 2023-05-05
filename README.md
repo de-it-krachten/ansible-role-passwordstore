@@ -73,10 +73,13 @@ passwordstore_packages:
   - pass
 </pre></code>
 
-### defaults/Fedora.yml
+### defaults/family-Debian.yml
 <pre><code>
-# Installation method (package or archive)
-passwordstore_source: 'package'
+# Package dependencies for archive installation
+passwordstore_dependencies_archive:
+  - make
+  - tar
+  - xz-utils
 </pre></code>
 
 ### defaults/family-RedHat.yml
@@ -85,13 +88,10 @@ passwordstore_source: 'package'
 passwordstore_source: 'archive'
 </pre></code>
 
-### defaults/family-Debian.yml
+### defaults/Fedora.yml
 <pre><code>
-# Package dependencies for archive installation
-passwordstore_dependencies_archive:
-  - make
-  - tar
-  - xz-utils
+# Installation method (package or archive)
+passwordstore_source: 'package'
 </pre></code>
 
 
