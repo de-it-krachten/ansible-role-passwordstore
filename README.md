@@ -34,8 +34,8 @@ Supported platforms
 - Ubuntu 18.04 LTS
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
-- Fedora 35
 - Fedora 36
+- Fedora 37
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -73,10 +73,13 @@ passwordstore_packages:
   - pass
 </pre></code>
 
-### defaults/Fedora.yml
+### defaults/family-Debian.yml
 <pre><code>
-# Installation method (package or archive)
-passwordstore_source: 'package'
+# Package dependencies for archive installation
+passwordstore_dependencies_archive:
+  - make
+  - tar
+  - xz-utils
 </pre></code>
 
 ### defaults/family-RedHat.yml
@@ -85,13 +88,10 @@ passwordstore_source: 'package'
 passwordstore_source: 'archive'
 </pre></code>
 
-### defaults/family-Debian.yml
+### defaults/Fedora.yml
 <pre><code>
-# Package dependencies for archive installation
-passwordstore_dependencies_archive:
-  - make
-  - tar
-  - xz-utils
+# Installation method (package or archive)
+passwordstore_source: 'package'
 </pre></code>
 
 
@@ -113,7 +113,7 @@ passwordstore_dependencies_archive:
     passwordstore_group_name: root
     passwordstore_user_email: root@localhost
   roles:
-    - gpg
+    - deitkrachten.gpg
   tasks:
     - name: Include role 'passwordstore'
       ansible.builtin.include_role:

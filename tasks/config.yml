@@ -24,4 +24,5 @@
 
     - name: Initiate pass
       ansible.builtin.command: pass init {{ passwordstore_user_email }}
+      changed_when: true
       when: not _pass.stat.exists
