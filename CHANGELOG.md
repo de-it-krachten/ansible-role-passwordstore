@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.1.0...v1.2.0) (2023-05-06)
+
+
+### Features
+
+* Move to namespaced role names ([d2d4625](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/d2d4625ff93dfef5205b3b0e10d03ed52a21a293))
+
 # [1.1.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.0.1...v1.1.0) (2023-01-19)
 
 
