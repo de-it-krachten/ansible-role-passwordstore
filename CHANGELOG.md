@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.2.0...v1.3.0) (2023-09-09)
+
+
+### Bug Fixes
+
+* Fix loop label to string ([d06a652](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/d06a652a049abeeecdc3eea8b266b64a143ba993))
+
+
+### Features
+
+* Update supported platforms & CI ([d5d4229](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/d5d4229667b374518a21a8d3c76a6ccd254099b7))
+
 # [1.2.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.1.0...v1.2.0) (2023-05-06)
 
 
