@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.3.0...v1.3.1) (2023-09-09)
+
+
+### Bug Fixes
+
+* Fix loop label to string ([052472c](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/052472cf09bfabcc3bcdbf883cea3c6341452daa))
+
 # [1.3.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.2.0...v1.3.0) (2023-09-09)
 
 
