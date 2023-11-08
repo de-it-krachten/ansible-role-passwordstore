@@ -8,6 +8,7 @@ generic:
     Installs passwordstore 
   collections: []
 
+# Molecule
 molecule:
   requirements:
     roles_extra:
