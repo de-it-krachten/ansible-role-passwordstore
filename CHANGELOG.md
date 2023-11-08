@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.3.1...v1.3.2) (2023-11-08)
+
+
+### Bug Fixes
+
+* Move download to control node ([cd215d6](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/cd215d63c812b54a3dd781dedaba7db01cfb9c70))
+
 ## [1.3.1](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.3.0...v1.3.1) (2023-09-09)
 
 
