@@ -17,13 +17,14 @@
         url: "{{ passwordstore_url }}"
         dest: /tmp/password-store-{{ passwordstore_version }}.tar.xz
         mode: "0644"
+      run_once: true
+      delegate_to: localhost
 
     - name: Extract pass
       ansible.builtin.unarchive:
         src: /tmp/password-store-{{ passwordstore_version }}.tar.xz
         dest: /tmp
         keep_newer: yes
-        remote_src: true
 
     - name: Install pass  # noqa no-changed-when
       ansible.builtin.command: make install

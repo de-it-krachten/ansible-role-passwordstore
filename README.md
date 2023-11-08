@@ -13,7 +13,6 @@ Installs passwordstore
 None
 
 #### Collections
-- community.general
 
 ## Platforms
 
@@ -31,7 +30,6 @@ Supported platforms
 - AlmaLinux 9
 - SUSE Linux Enterprise 15<sup>1</sup>
 - openSUSE Leap 15
-- Debian 10 (Buster)<sup>1</sup>
 - Debian 11 (Bullseye)
 - Debian 12 (Bookworm)
 - Ubuntu 20.04 LTS
@@ -110,7 +108,7 @@ passwordstore_source: 'package'
 <pre><code>
 - name: sample playbook for role 'passwordstore'
   hosts: all
-  become: "yes"
+  become: 'yes'
   vars:
     gpg_user_name: root
     gpg_user_realname: root
