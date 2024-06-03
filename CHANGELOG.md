@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.3.2...v1.4.0) (2024-06-03)
+
+
+### Features
+
+* Add support for Ubuntu 24.04 LTS + Fedora 40 ([fe6efd0](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/fe6efd07f85f549614a6ba4839720ea6a80d5d67))
+
 ## [1.3.2](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.3.1...v1.3.2) (2023-11-08)
 
 
