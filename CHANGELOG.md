@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.4.0...v1.5.0) (2024-12-29)
+
+
+### Features
+
+* Update supported platforms & CI ([5992ee8](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/5992ee8fe1573b00f39b71fb9dd97b27926e1180))
+
 # [1.4.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.3.2...v1.4.0) (2024-06-03)
 
 
