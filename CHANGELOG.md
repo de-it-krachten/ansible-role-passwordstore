@@ -1,3 +1,14 @@
+# [1.6.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.5.0...v1.6.0) (2025-08-06)
+
+
+### Features
+
+* Add support for AlmaLinux 10 ([6ec668e](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/6ec668e8c1513855f6cbdf4162bfd36ff9bcb52e))
+* Add support for Debian 13 (Trixie) ([774791e](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/774791e43e1a0540a812ffb62bd13a83869a4c31))
+* Add support for OracleLinux 10 ([181dfc8](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/181dfc8ca94717f54edc31ef769e19690af2481d))
+* Add support for Red Hat Enterprise Linux 10 ([9ced583](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/9ced583fb3cff513d55368ec38c3b083250a3f5b))
+* Add support for RockyLinux 10 ([a93720f](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/a93720f16948d756af5caef2b4ceb589f57bba17))
+
 # [1.5.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.4.0...v1.5.0) (2024-12-29)
 
 
