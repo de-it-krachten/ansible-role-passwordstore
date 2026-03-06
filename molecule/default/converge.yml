@@ -4,6 +4,7 @@
   hosts: all
   become: "yes"
   vars:
+    molecule_driver: "{{ lookup('env', 'MOLECULE_DRIVER_NAME') }}"
     gpg_user_name: root
     gpg_user_realname: root
     gpg_user_comment: test key
