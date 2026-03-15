@@ -1,3 +1,13 @@
+# [1.7.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.6.0...v1.7.0) (2026-03-15)
+
+
+### Features
+
+* Added support for Fedora 43 ([b699a8c](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/b699a8c4bc6ae2f8d980a43265b0a000efa6abf0))
+* Drop support for Fedora 41 ([3af820b](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/3af820b3d671ab8d2171222d1649b7faf6539638))
+* Drop support for openSUSE Leap 15 ([49d5eb2](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/49d5eb217269b2bb4cbf51d934c5690019c991b1))
+* Drop support for SUSE Linux Enterprise 15 ([10fb95a](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/10fb95a6d2326cc19f910959f1b349049799f216))
+
 # [1.6.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.5.0...v1.6.0) (2025-08-06)
 
 
