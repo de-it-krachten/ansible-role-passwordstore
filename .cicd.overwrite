@@ -8,6 +8,12 @@ generic:
     Installs passwordstore 
   collections: []
 
+# Supported platforms
+platforms:
+  ubuntu2004:
+    supported: true
+    ci: true
+
 # Molecule
 molecule:
   requirements:
