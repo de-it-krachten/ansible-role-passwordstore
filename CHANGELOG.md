@@ -1,3 +1,17 @@
+# [1.8.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.7.0...v1.8.0) (2026-07-27)
+
+
+### Bug Fixes
+
+* Standarize vars.yml ([ddc1693](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/ddc169382c915010e802a600a0d4a7ffeb4eab61))
+
+
+### Features
+
+* Added support for Fedora 44 ([d0041ac](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/d0041acc22e23e2998a072fb0a9792a87b61730a))
+* Added support for Ubuntu 26.04 LTS ([1588355](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/158835599b94e2dcd3c6423afa98a17e23855c08))
+* Drop support for Fedora 42 ([82c0973](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/82c0973b4a4237e6ad67b25d52558c84e7fc29cf))
+
 # [1.7.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.6.0...v1.7.0) (2026-03-15)
 
 
