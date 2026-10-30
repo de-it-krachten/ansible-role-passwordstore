@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.8.0...v1.9.0) (2026-10-30)
+
+
+### Features
+
+* Drop support for Debian 11 (Bullseye) ([83c1176](https://github.com/de-it-krachten/ansible-role-passwordstore/commit/83c11764ccf350a705002327eb27903fdea40177))
+
 # [1.8.0](https://github.com/de-it-krachten/ansible-role-passwordstore/compare/v1.7.0...v1.8.0) (2026-07-27)
 
 
